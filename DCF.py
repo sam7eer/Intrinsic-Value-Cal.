@@ -213,8 +213,20 @@ if ticker_input:
                     <p>Invest with caution. The stock is trading above its calculated intrinsic value.</p>
                 </div>
                 """, unsafe_allow_html=True)
+            with st.expander("A Note on Model Limitations"):
+                st.write("""
+                This standard DCF model is most reliable for established companies with a history of stable, positive cash flows. 
+                
+                For certain types of companies, especially high-growth tech firms, the valuation can be less accurate due to factors not explicitly modeled here, such as:
+                - **Stock-Based Compensation (SBC):** High SBC can depress Net Income, leading to an artificially low "Owner Earnings" calculation and a lower valuation.
+                - **Heavy Reinvestment:** Companies aggressively investing for future growth may show low or negative free cash flow, even if they are fundamentally healthy.
+                
+                For these cases, a more specialized valuation model may be required.
+                """)
+
             
             st.info("""
             **Disclaimer:** This is not financial advice. The calculated value is highly dependent on the 
             assumptions you provide. Always do your own thorough research.
             """)
+
